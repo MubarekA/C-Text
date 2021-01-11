@@ -4,7 +4,7 @@ from google.cloud import vision_v1
 from google.cloud.vision_v1 import types 
 import pandas as pd 
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS']=r'/Users/mubarekabdela/Desktop/Fall2020Projects/C-Text/env/account_token.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS']=r'/Fall2020Projects/C-Text/env/account_token.json'
 
 client = vision_v1.ImageAnnotatorClient()
 def multiplechoice(string):
@@ -76,6 +76,6 @@ def detectText(img):
         )
     return df['description'][0] 
 FILE_NAME = 'Q1.png'
-FOLDER_PATH=r'/Users/mubarekabdela/Desktop/Fall2020Projects/C-Text'
+FOLDER_PATH=r'/Fall2020Projects/C-Text'
 txt=detectText(os.path.join(FOLDER_PATH,FILE_NAME))
 print(multiplechoice(txt))
